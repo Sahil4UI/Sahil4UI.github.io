@@ -24,7 +24,7 @@ h1,h2,h3,h4,h5,h6
 /* header */
 #header{
     background-image: url("https://demo.w3layouts.com/demos_new/template_demo/17-09-2018/online_resume-demo_Free/1471767518/web/images/1.jpg");
-    background-size: cover;
+    background-size: 100% 100%;
     padding-bottom:300px;
 
 }
