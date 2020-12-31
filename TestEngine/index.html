@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="wid<sup>th</sup>=device-wid<sup>th</sup>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url("https://assets.telegraphindia.com/abped/2020/Sep/1600356116_5-things.jpg");
+        }
+        
+        span {
+            display: inline-block;
+            color: black;
+            border: 2px solid;
+            text-decoration: underline;
+            background-color: white;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        
+        #registration-form {
+            background-color: rgba(239, 222, 205, 0.8);
+        }
+        
+        #loginform {
+            background-color: rgba(201, 255, 229, 0.8);
+        }
+    </style>
+</head>
+
+<body>
+    <h1><span>Test Engine Application</span></h1>
+    <h2><span>Registration Form</span></h2>
+    <form id="registration-form" action="cgi-bin/register.py">
+        <table>
+            <tr>
+                <td>Register As</td>
+                <td>
+                    <select name="role" id="">
+                        <option value="teacher">Teacher</option>
+                        <option value="student">Student</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Enter Name :</td>
+                <td>
+                    <input type="text" placeholder="Enter Name :" name="u_name" id="" required>
+                </td>
+            </tr>
+            <tr>
+                <td>Enter Your ID</td>
+                <td>
+                    <input type="text" placeholder="Enter ID:" name="u_id" id="" required>
+                </td>
+            </tr>
+            <tr>
+                <td>Create Your Password</td>
+                <td>
+                    <input type="password" placeholder="Enter Password" name="u_pwd" id="" required>
+                </td>
+            </tr>
+            <tr>
+                <td>Select Grade</td>
+                <td>
+                    <select name="grade" id="">
+                        <option value="1">1<sup>st</sup></option>
+                        <option value="2">2<sup>nd</sup></option>
+                        <option value="3">3<sup>rd</sup></option>
+                        <option value="4">4<sup>th</sup></option>
+                        <option value="5">5<sup>th</sup></option>
+                        <option value="6">6<sup>th</sup></option>
+                        <option value="7">7<sup>th</sup></option>
+                        <option value="8">8<sup>th</sup></option>
+                        <option value="9">9<sup>th</sup></option>
+                        <option value="10">10<sup>th</sup></option>
+                        <option value="11">11<sup>th</sup></option>
+                        <option value="12">12<sup>th</sup></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Register Now"></td>
+                <td><input type="reset" value="Reset the Form"></td>
+            </tr>
+
+        </table>
+    </form>
+    <hr>
+    <h2><span>Login Form</span></h2>
+    <form id="loginform" action="cgi-bin/login.py">
+        <table>
+            <tr>
+                <td>Login As</td>
+                <td>
+                    <select name="role" id="">
+                        <option value="teacher">Teacher</option>
+                        <option value="student">Student</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Enter ID</td>
+                <td>
+                    <input type="text" placeholder="Enter ID :" name="u_id" id="" required>
+                </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" placeholder="Enter your Password :" name="u_pwd" id="" required></td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Login">
+                </td>
+                <td>
+                    <input type="reset" value="Reset the Form">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
