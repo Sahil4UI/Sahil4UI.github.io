@@ -227,3 +227,22 @@ background-image: url("../images/browseByLocation/Delhi.jpg");
 #delight{
     background-color: #F6F4F5;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:992px)
+{
+    
+#section2 .container{
+    width: 100%;
+}
+}
