@@ -242,7 +242,7 @@ background-image: url("../images/browseByLocation/Delhi.jpg");
 @media (max-width:992px)
 {
     
-#section2 .container{
+ .container{
     width: 100%;
 }
 }
