@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JD Premium Dental Clinic | Best Dentist in Najafgarh, New Delhi</title>
+<meta name="description" content="JD Premium Dental Clinic in Najafgarh – expert dental care, teeth whitening, implants, braces, root canal & more. Call 087430 46085.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ─── CSS VARIABLES ─────────────────────────────────── */
+:root {
+  --deep:    #031C3A;
+  --navy:    #0A3567;
+  --blue:    #1358A5;
+  --sky:     #2E86DE;
+  --aqua:    #0BBCD4;
+  --mint:    #00D9C0;
+  --white:   #FFFFFF;
+  --offwhite:#F0F6FF;
+  --light:   #D6EAF8;
+  --gray:    #8A9BB5;
+  --dark:    #0D1B2E;
+  --gold:    #F5C842;
+
+  --grad-main: linear-gradient(135deg, #031C3A 0%, #0A3567 40%, #1358A5 70%, #0BBCD4 100%);
+  --grad-card: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  --grad-btn:  linear-gradient(135deg, #0BBCD4, #2E86DE, #1358A5);
+  --grad-gold: linear-gradient(135deg, #F5C842, #F0A500);
+
+  --radius: 18px;
+  --shadow: 0 20px 60px rgba(3,28,58,0.35);
+  --glow:   0 0 40px rgba(11,188,212,0.25);
+}
+
+/* ─── RESET & BASE ──────────────────────────────────── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--dark);
+  color: var(--white);
+  overflow-x: hidden;
+  cursor: none;
+}
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; }
+ul { list-style: none; }
+
+/* ─── CUSTOM CURSOR ─────────────────────────────────── */
+.cursor-dot, .cursor-ring {
+  position: fixed; border-radius: 50%;
+  pointer-events: none; z-index: 9999;
+  transition: opacity .3s;
+}
+.cursor-dot {
+  width: 8px; height: 8px;
+  background: var(--aqua);
+  transform: translate(-50%,-50%);
+}
+.cursor-ring {
+  width: 36px; height: 36px;
+  border: 2px solid rgba(11,188,212,0.5);
+  transform: translate(-50%,-50%);
+  transition: transform .12s ease, width .2s, height .2s, border-color .2s;
+}
+.cursor-ring.hovered { width: 56px; height: 56px; border-color: var(--mint); }
+
+/* ─── SCROLLBAR ─────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--deep); }
+::-webkit-scrollbar-thumb { background: var(--sky); border-radius: 3px; }
+
+/* ─── NOISE OVERLAY ─────────────────────────────────── */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 0; opacity: .4;
+}
+
+/* ─── FLOATING PARTICLES ────────────────────────────── */
+#particles { position: fixed; inset: 0; pointer-events: none; z-index: 1; overflow: hidden; }
+.particle {
+  position: absolute; border-radius: 50%;
+  background: radial-gradient(circle, var(--aqua), transparent);
+  animation: floatParticle linear infinite;
+  opacity: 0;
+}
+@keyframes floatParticle {
+  0%   { transform: translateY(110vh) scale(0); opacity: 0; }
+  10%  { opacity: .6; }
+  90%  { opacity: .3; }
+  100% { transform: translateY(-20vh) scale(1); opacity: 0; }
+}
+
+/* ─── NAVBAR ─────────────────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 0 5%;
+  transition: all .4s ease;
+}
+nav.scrolled {
+  background: rgba(3,28,58,0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(11,188,212,0.15);
+  box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+}
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 72px; max-width: 1280px; margin: 0 auto;
+}
+.logo {
+  display: flex; align-items: center; gap: 12px;
+  font-family: 'Playfair Display', serif;
+}
+.logo-icon {
+  width: 44px; height: 44px;
+  background: var(--grad-btn);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+  box-shadow: 0 4px 20px rgba(11,188,212,0.4);
+  animation: logoPulse 3s ease-in-out infinite;
+}
+@keyframes logoPulse {
+  0%,100% { box-shadow: 0 4px 20px rgba(11,188,212,0.4); }
+  50%      { box-shadow: 0 4px 40px rgba(11,188,212,0.7); }
+}
+.logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+.logo-name { font-size: 1rem; font-weight: 700; letter-spacing: 1px; color: var(--white); }
+.logo-tag  { font-size: .6rem; font-family: 'DM Sans', sans-serif; color: var(--aqua); letter-spacing: 2px; text-transform: uppercase; }
+.nav-links { display: flex; gap: 2rem; align-items: center; }
+.nav-links a {
+  font-size: .85rem; font-weight: 500; letter-spacing: .5px;
+  color: rgba(255,255,255,0.8);
+  position: relative; padding-bottom: 4px;
+  transition: color .3s;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 100%;
+  height: 2px; background: var(--grad-btn);
+  border-radius: 2px; transition: right .3s ease;
+}
+.nav-links a:hover { color: var(--aqua); }
+.nav-links a:hover::after { right: 0; }
+.nav-cta {
+  background: var(--grad-btn); color: var(--white) !important;
+  padding: 8px 20px; border-radius: 50px;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 20px rgba(11,188,212,0.35);
+  transition: transform .2s, box-shadow .2s !important;
+}
+.nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(11,188,212,0.5) !important; }
+.nav-cta::after { display: none !important; }
+.hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  cursor: none; padding: 4px;
+}
+.hamburger span {
+  display: block; width: 26px; height: 2px;
+  background: var(--white); border-radius: 2px;
+  transition: all .3s;
+}
+.mobile-menu {
+  display: none; position: fixed; top: 72px; left: 0; right: 0;
+  background: rgba(3,28,58,0.98); backdrop-filter: blur(20px);
+  padding: 2rem 5%; flex-direction: column; gap: 1.5rem;
+  border-bottom: 1px solid rgba(11,188,212,0.15);
+  z-index: 999;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a { font-size: 1.1rem; color: rgba(255,255,255,0.85); padding: .5rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+
+/* ─── HERO ────────────────────────────────────────────── */
+#hero {
+  min-height: 100vh; position: relative;
+  display: flex; align-items: center;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background: var(--grad-main);
+}
+.hero-bg::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 70% at 70% 50%, rgba(11,188,212,0.12) 0%, transparent 70%),
+              radial-gradient(ellipse 50% 60% at 20% 80%, rgba(0,217,192,0.08) 0%, transparent 60%);
+}
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(11,188,212,0.05) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(11,188,212,0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridDrift 20s linear infinite;
+}
+@keyframes gridDrift {
+  0%   { transform: translate(0,0); }
+  100% { transform: translate(60px,60px); }
+}
+.hero-orb {
+  position: absolute; border-radius: 50%; filter: blur(80px);
+  animation: orbFloat ease-in-out infinite;
+}
+.hero-orb-1 { width: 500px; height: 500px; background: rgba(11,188,212,0.15); top: -100px; right: 5%; animation-duration: 8s; }
+.hero-orb-2 { width: 350px; height: 350px; background: rgba(0,217,192,0.1); bottom: 10%; left: 5%; animation-duration: 11s; animation-delay: -4s; }
+.hero-orb-3 { width: 250px; height: 250px; background: rgba(46,134,222,0.15); top: 40%; right: 25%; animation-duration: 7s; animation-delay: -2s; }
+@keyframes orbFloat {
+  0%,100% { transform: translate(0,0) scale(1); }
+  50%      { transform: translate(20px,-30px) scale(1.05); }
+}
+.hero-content {
+  position: relative; z-index: 5;
+  max-width: 1280px; margin: 0 auto; padding: 0 5%;
+  padding-top: 100px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+  width: 100%;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(11,188,212,0.15); border: 1px solid rgba(11,188,212,0.3);
+  padding: 6px 16px; border-radius: 50px;
+  font-size: .75rem; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--aqua); margin-bottom: 1.5rem;
+  animation: fadeSlideUp .8s ease forwards;
+}
+.hero-badge::before { content: '●'; font-size: .5rem; animation: blink 1.5s infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  font-weight: 900; line-height: 1.1;
+  margin-bottom: 1.5rem;
+  animation: fadeSlideUp .8s .2s ease both;
+}
+.hero-title .line-color {
+  background: linear-gradient(135deg, var(--aqua), var(--mint));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-sub {
+  font-size: 1.05rem; color: rgba(255,255,255,0.7); line-height: 1.7;
+  margin-bottom: 2.5rem;
+  animation: fadeSlideUp .8s .35s ease both;
+}
+.hero-btns {
+  display: flex; gap: 1rem; flex-wrap: wrap;
+  animation: fadeSlideUp .8s .5s ease both;
+}
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--grad-btn); color: var(--white);
+  padding: 14px 32px; border-radius: 50px; font-weight: 600;
+  font-size: .9rem; letter-spacing: .5px;
+  box-shadow: 0 8px 30px rgba(11,188,212,0.4);
+  transition: transform .2s, box-shadow .2s;
+  cursor: none;
+}
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(11,188,212,0.6); }
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1.5px solid rgba(255,255,255,0.3); color: var(--white);
+  padding: 14px 32px; border-radius: 50px; font-weight: 500;
+  font-size: .9rem; transition: all .2s; cursor: none;
+  backdrop-filter: blur(10px); background: rgba(255,255,255,0.05);
+}
+.btn-secondary:hover { border-color: var(--aqua); color: var(--aqua); background: rgba(11,188,212,0.1); transform: translateY(-3px); }
+.hero-stats {
+  display: flex; gap: 2rem; margin-top: 3rem; flex-wrap: wrap;
+  animation: fadeSlideUp .8s .65s ease both;
+}
+.stat { display: flex; flex-direction: column; }
+.stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--aqua); }
+.stat-label { font-size: .75rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; }
+.hero-visual {
+  position: relative; display: flex; justify-content: center; align-items: center;
+  animation: fadeSlideUp .8s .3s ease both;
+}
+.hero-card-main {
+  background: rgba(255,255,255,0.07);
+  backdrop-filter: blur(30px);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 28px; padding: 2.5rem;
+  width: 100%; max-width: 380px;
+  box-shadow: var(--shadow), var(--glow);
+  position: relative; z-index: 2;
+}
+.hero-card-icon { font-size: 3.5rem; margin-bottom: 1rem; display: block; }
+.hero-card-main h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: .5rem; }
+.hero-card-main p { font-size: .85rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+.hero-float-badge {
+  position: absolute;
+  background: rgba(255,255,255,0.1); backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 14px; padding: 10px 16px;
+  font-size: .78rem; font-weight: 600;
+  display: flex; align-items: center; gap: 8px;
+  animation: floatBadge 4s ease-in-out infinite;
+}
+.hero-float-badge.b1 { top: -15px; right: -15px; animation-delay: 0s; }
+.hero-float-badge.b2 { bottom: 10px; left: -20px; animation-delay: -2s; }
+.badge-dot { width: 8px; height: 8px; background: var(--mint); border-radius: 50%; animation: blink 1.5s infinite; }
+@keyframes floatBadge {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+.hero-info-bar {
+  position: absolute; bottom: 2rem; left: 5%; right: 5%;
+  max-width: 1280px; margin: 0 auto;
+  background: rgba(255,255,255,0.06); backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.1); border-radius: 16px;
+  padding: 1rem 2rem;
+  display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap; gap: 1rem;
+  z-index: 5;
+  animation: fadeSlideUp .8s .8s ease both;
+}
+.info-item { display: flex; align-items: center; gap: 10px; font-size: .82rem; }
+.info-icon { font-size: 1.2rem; }
+.info-label { color: rgba(255,255,255,0.5); font-size: .7rem; }
+.info-val { color: var(--white); font-weight: 500; }
+.info-sep { width: 1px; height: 40px; background: rgba(255,255,255,0.1); }
+@keyframes fadeSlideUp {
+  from { opacity:0; transform: translateY(30px); }
+  to   { opacity:1; transform: translateY(0); }
+}
+
+/* ─── SECTION WRAPPER ────────────────────────────────── */
+section { position: relative; z-index: 2; }
+.section-inner { max-width: 1280px; margin: 0 auto; padding: 100px 5%; }
+.section-tag {
+  display: inline-block;
+  background: rgba(11,188,212,0.12); border: 1px solid rgba(11,188,212,0.25);
+  color: var(--aqua); padding: 5px 16px; border-radius: 50px;
+  font-size: .72rem; letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 1rem;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem); font-weight: 700;
+  line-height: 1.2; margin-bottom: 1rem;
+}
+.section-title span {
+  background: linear-gradient(135deg, var(--aqua), var(--mint));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.section-sub { color: rgba(255,255,255,0.55); font-size: 1rem; line-height: 1.7; max-width: 560px; }
+
+/* ─── REVEAL ANIMATIONS ──────────────────────────────── */
+.reveal { opacity: 0; transform: translateY(40px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-left { opacity: 0; transform: translateX(-40px); transition: opacity .7s ease, transform .7s ease; }
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+.reveal-right { opacity: 0; transform: translateX(40px); transition: opacity .7s ease, transform .7s ease; }
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+/* ─── ABOUT SECTION ──────────────────────────────────── */
+#about { background: linear-gradient(180deg, var(--dark) 0%, #041625 100%); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.about-visual { position: relative; }
+.about-card-wrap {
+  position: relative; padding: 2rem;
+}
+.about-main-img {
+  background: linear-gradient(135deg, rgba(10,53,103,0.8), rgba(3,28,58,0.9));
+  border: 1px solid rgba(11,188,212,0.2);
+  border-radius: 24px; padding: 3rem 2rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.about-tooth-icon { font-size: 5rem; margin-bottom: 1rem; display: block; }
+.about-main-img h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; margin-bottom: .5rem; color: var(--aqua); }
+.about-main-img p { font-size: .85rem; color: rgba(255,255,255,0.6); }
+.about-accent-card {
+  position: absolute; background: var(--grad-btn);
+  border-radius: 16px; padding: 1.2rem 1.5rem;
+  box-shadow: 0 12px 35px rgba(11,188,212,0.4);
+}
+.about-accent-card.ac1 { top: 0; right: 0; }
+.about-accent-card.ac2 { bottom: 0; left: 0; }
+.about-accent-card p { font-size: .75rem; opacity: .85; }
+.about-accent-card strong { font-size: 1.3rem; font-weight: 700; display: block; }
+.about-text p { color: rgba(255,255,255,0.65); line-height: 1.8; margin-bottom: 1.2rem; font-size: .95rem; }
+.about-values { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+.value-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px; padding: 1rem;
+  transition: background .3s, border-color .3s, transform .3s;
+}
+.value-item:hover { background: rgba(11,188,212,0.08); border-color: rgba(11,188,212,0.2); transform: translateY(-3px); }
+.value-icon { font-size: 1.4rem; flex-shrink: 0; }
+.value-text strong { font-size: .85rem; display: block; margin-bottom: 2px; }
+.value-text span { font-size: .75rem; color: rgba(255,255,255,0.5); }
+
+/* ─── SERVICES SECTION ───────────────────────────────── */
+#services { background: linear-gradient(180deg, #041625 0%, #031830 100%); }
+.services-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem; margin-top: 3rem;
+}
+.service-card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px; padding: 1.8rem;
+  position: relative; overflow: hidden;
+  transition: transform .3s ease, border-color .3s, background .3s;
+  cursor: none;
+}
+.service-card::before {
+  content: ''; position: absolute; inset: 0; opacity: 0;
+  background: linear-gradient(135deg, rgba(11,188,212,0.08), rgba(0,217,192,0.04));
+  transition: opacity .3s;
+}
+.service-card:hover { transform: translateY(-6px); border-color: rgba(11,188,212,0.3); }
+.service-card:hover::before { opacity: 1; }
+.service-card-glow {
+  position: absolute; width: 120px; height: 120px;
+  background: radial-gradient(circle, rgba(11,188,212,0.15), transparent);
+  top: -30px; right: -30px; border-radius: 50%;
+  transition: opacity .3s;
+}
+.service-icon {
+  font-size: 2.2rem; margin-bottom: 1rem; display: block;
+  transition: transform .3s;
+}
+.service-card:hover .service-icon { transform: scale(1.15) rotate(-5deg); }
+.service-card h3 { font-size: .95rem; font-weight: 600; margin-bottom: .6rem; color: var(--white); }
+.service-card p  { font-size: .8rem; color: rgba(255,255,255,0.5); line-height: 1.7; }
+.service-card-arrow {
+  position: absolute; bottom: 1.5rem; right: 1.5rem;
+  width: 32px; height: 32px; border-radius: 50%;
+  background: rgba(11,188,212,0.15); display: flex; align-items: center; justify-content: center;
+  font-size: .9rem; transition: background .3s, transform .3s;
+}
+.service-card:hover .service-card-arrow { background: var(--aqua); transform: translate(2px,-2px); }
+
+/* ─── WHY US SECTION ─────────────────────────────────── */
+#why { background: linear-gradient(180deg, #031830 0%, #020F20 100%); }
+.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.why-features { display: flex; flex-direction: column; gap: 1.2rem; }
+.why-feat {
+  display: flex; gap: 1.2rem; align-items: flex-start;
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px; padding: 1.4rem;
+  transition: all .3s; cursor: none;
+}
+.why-feat:hover { background: rgba(11,188,212,0.07); border-color: rgba(11,188,212,0.25); transform: translateX(6px); }
+.why-feat-icon {
+  width: 48px; height: 48px; border-radius: 12px; flex-shrink: 0;
+  background: var(--grad-btn); display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem; box-shadow: 0 6px 20px rgba(11,188,212,0.3);
+}
+.why-feat-text h4 { font-size: .9rem; font-weight: 600; margin-bottom: 4px; }
+.why-feat-text p  { font-size: .8rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
+.why-visual { position: relative; }
+.why-big-card {
+  background: linear-gradient(135deg, rgba(10,53,103,0.6), rgba(3,28,58,0.8));
+  border: 1px solid rgba(11,188,212,0.2); border-radius: 28px;
+  padding: 2.5rem; box-shadow: var(--shadow), var(--glow);
+}
+.why-big-card h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 1.5rem; color: var(--aqua); }
+.why-stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.why-stat {
+  background: rgba(255,255,255,0.05); border-radius: 14px; padding: 1.2rem;
+  text-align: center; transition: transform .3s;
+}
+.why-stat:hover { transform: scale(1.04); }
+.why-stat-num { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; color: var(--aqua); display: block; }
+.why-stat-lbl { font-size: .72rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; }
+
+/* ─── TESTIMONIALS SECTION ───────────────────────────── */
+#testimonials { background: linear-gradient(180deg, #020F20 0%, #031C3A 100%); overflow: hidden; }
+.testimonials-track-wrap { overflow: hidden; position: relative; margin-top: 3rem; }
+.testimonials-track-wrap::before,
+.testimonials-track-wrap::after {
+  content: ''; position: absolute; top: 0; bottom: 0; width: 120px; z-index: 2;
+  pointer-events: none;
+}
+.testimonials-track-wrap::before { left: 0; background: linear-gradient(90deg, #020F20, transparent); }
+.testimonials-track-wrap::after  { right: 0; background: linear-gradient(-90deg, #020F20, transparent); }
+.testimonials-track {
+  display: flex; gap: 1.5rem;
+  animation: scrollTrack 35s linear infinite;
+  width: max-content;
+}
+.testimonials-track:hover { animation-play-state: paused; }
+@keyframes scrollTrack {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.testi-card {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 20px; padding: 1.8rem; width: 320px; flex-shrink: 0;
+  transition: border-color .3s, background .3s;
+}
+.testi-card:hover { border-color: rgba(11,188,212,0.25); background: rgba(11,188,212,0.05); }
+.testi-stars { color: var(--gold); font-size: .95rem; margin-bottom: .8rem; letter-spacing: 2px; }
+.testi-text { font-size: .85rem; color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 1.2rem; font-style: italic; }
+.testi-author { display: flex; align-items: center; gap: 10px; }
+.testi-avatar {
+  width: 38px; height: 38px; border-radius: 50%;
+  background: var(--grad-btn); display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: .85rem;
+}
+.testi-name strong { font-size: .85rem; display: block; }
+.testi-name span { font-size: .72rem; color: rgba(255,255,255,0.4); }
+
+/* ─── FAQ SECTION ────────────────────────────────────── */
+#faq { background: linear-gradient(180deg, #031C3A 0%, #041625 100%); }
+.faq-list { max-width: 800px; margin: 3rem auto 0; display: flex; flex-direction: column; gap: 1rem; }
+.faq-item {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px; overflow: hidden;
+  transition: border-color .3s;
+}
+.faq-item.open { border-color: rgba(11,188,212,0.25); }
+.faq-q {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.3rem 1.6rem; cursor: none;
+  font-size: .9rem; font-weight: 600;
+  transition: color .3s;
+}
+.faq-q:hover { color: var(--aqua); }
+.faq-toggle {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: rgba(11,188,212,0.15); display: flex; align-items: center; justify-content: center;
+  font-size: .9rem; flex-shrink: 0; transition: background .3s, transform .3s;
+}
+.faq-item.open .faq-toggle { background: var(--aqua); transform: rotate(45deg); }
+.faq-a {
+  max-height: 0; overflow: hidden;
+  padding: 0 1.6rem;
+  font-size: .85rem; color: rgba(255,255,255,0.6); line-height: 1.75;
+  transition: max-height .4s ease, padding .3s;
+}
+.faq-item.open .faq-a { max-height: 200px; padding: 0 1.6rem 1.3rem; }
+
+/* ─── CONTACT SECTION ────────────────────────────────── */
+#contact { background: linear-gradient(180deg, #041625 0%, var(--deep) 100%); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: start; margin-top: 3rem; }
+.contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
+.contact-card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px; padding: 1.5rem;
+  display: flex; gap: 1.2rem; align-items: flex-start;
+  transition: all .3s;
+}
+.contact-card:hover { background: rgba(11,188,212,0.07); border-color: rgba(11,188,212,0.2); transform: translateX(4px); }
+.contact-card-icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  background: var(--grad-btn); display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem; flex-shrink: 0;
+  box-shadow: 0 6px 20px rgba(11,188,212,0.3);
+}
+.contact-card-body h4 { font-size: .85rem; font-weight: 600; margin-bottom: 4px; color: var(--aqua); }
+.contact-card-body p  { font-size: .82rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+.contact-card-body a  { color: var(--aqua); font-weight: 600; }
+.contact-form {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 24px; padding: 2.5rem;
+}
+.contact-form h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 2rem; color: var(--aqua); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 1rem; }
+.form-group label { font-size: .75rem; color: rgba(255,255,255,0.5); letter-spacing: .5px; text-transform: uppercase; }
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px; padding: 11px 14px;
+  color: var(--white); font-family: 'DM Sans', sans-serif; font-size: .88rem;
+  outline: none; transition: border-color .3s, background .3s;
+  cursor: none;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: rgba(255,255,255,0.25); }
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus { border-color: var(--aqua); background: rgba(11,188,212,0.06); }
+.form-group select option { background: var(--deep); }
+.form-group textarea { resize: vertical; min-height: 90px; }
+.form-submit {
+  width: 100%; padding: 14px; border: none;
+  background: var(--grad-btn); color: var(--white);
+  border-radius: 50px; font-family: 'DM Sans', sans-serif;
+  font-size: .95rem; font-weight: 600; cursor: none;
+  box-shadow: 0 8px 30px rgba(11,188,212,0.35);
+  transition: transform .2s, box-shadow .2s;
+  margin-top: .5rem;
+}
+.form-submit:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(11,188,212,0.55); }
+.form-success {
+  display: none; text-align: center; padding: 2rem;
+  color: var(--mint); font-size: 1rem;
+}
+.form-success span { font-size: 3rem; display: block; margin-bottom: 1rem; }
+
+/* ─── CTA SECTION ────────────────────────────────────── */
+#cta {
+  background: var(--grad-main); position: relative; overflow: hidden;
+}
+#cta::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(11,188,212,0.15), transparent);
+}
+.cta-inner {
+  max-width: 700px; margin: 0 auto; padding: 100px 5%;
+  text-align: center; position: relative; z-index: 2;
+}
+.cta-inner h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem,4vw,3rem); font-weight: 700; margin-bottom: 1rem; }
+.cta-inner p { color: rgba(255,255,255,0.7); font-size: 1rem; line-height: 1.7; margin-bottom: 2.5rem; }
+.cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.btn-gold {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--grad-gold); color: var(--dark);
+  padding: 14px 32px; border-radius: 50px; font-weight: 700;
+  font-size: .9rem; cursor: none;
+  box-shadow: 0 8px 30px rgba(245,200,66,0.35);
+  transition: transform .2s, box-shadow .2s;
+}
+.btn-gold:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(245,200,66,0.55); }
+
+/* ─── FOOTER ─────────────────────────────────────────── */
+footer {
+  background: #010D1A; border-top: 1px solid rgba(11,188,212,0.12);
+  padding: 60px 5% 30px;
+}
+.footer-inner { max-width: 1280px; margin: 0 auto; }
+.footer-grid {
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 3rem; margin-bottom: 3rem;
+}
+.footer-brand p { font-size: .82rem; color: rgba(255,255,255,0.45); line-height: 1.7; margin-top: 1rem; }
+.footer-col h4 { font-size: .8rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--aqua); margin-bottom: 1.2rem; }
+.footer-links { display: flex; flex-direction: column; gap: .6rem; }
+.footer-links a { font-size: .82rem; color: rgba(255,255,255,0.45); transition: color .2s; }
+.footer-links a:hover { color: var(--aqua); }
+.footer-contact-item { display: flex; gap: 10px; align-items: flex-start; margin-bottom: .8rem; }
+.footer-contact-item span:first-child { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+.footer-contact-item span:last-child { font-size: .8rem; color: rgba(255,255,255,0.45); line-height: 1.5; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.07); padding-top: 1.5rem;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+}
+.footer-bottom p { font-size: .75rem; color: rgba(255,255,255,0.3); }
+.footer-logo { display: flex; align-items: center; gap: 10px; }
+.scroll-top {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--grad-btn);
+  display: flex; align-items: center; justify-content: center;
+  cursor: none; transition: transform .2s, box-shadow .2s;
+  box-shadow: 0 4px 15px rgba(11,188,212,0.3);
+}
+.scroll-top:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(11,188,212,0.5); }
+
+/* ─── LOADING SCREEN ─────────────────────────────────── */
+#loader {
+  position: fixed; inset: 0; background: var(--deep); z-index: 9998;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 1.5rem; transition: opacity .5s ease, visibility .5s;
+}
+#loader.hidden { opacity: 0; visibility: hidden; }
+.loader-logo { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--aqua); }
+.loader-bar-wrap { width: 200px; height: 3px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden; }
+.loader-bar { height: 100%; background: var(--grad-btn); border-radius: 2px; animation: loaderAnim 1.8s ease forwards; }
+@keyframes loaderAnim { from { width: 0; } to { width: 100%; } }
+.loader-tag { font-size: .72rem; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.3); }
+
+/* ─── RESPONSIVE ─────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .hero-content { grid-template-columns: 1fr; gap: 3rem; }
+  .hero-visual { display: none; }
+  .about-grid, .why-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .hero-info-bar { display: none; }
+  .form-row { grid-template-columns: 1fr; }
+  .hero-stats { gap: 1.2rem; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .why-stats-grid { grid-template-columns: 1fr 1fr; }
+  .about-values { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- CURSOR -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-logo">🦷 JD Dental</div>
+  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+  <div class="loader-tag">Loading your smile...</div>
+</div>
+
+<!-- PARTICLES -->
+<div id="particles"></div>
+
+<!-- ═══════════════ NAVBAR ═══════════════ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">🦷</div>
+      <div class="logo-text">
+        <span class="logo-name">JD Premium Dental</span>
+        <span class="logo-tag">Najafgarh, New Delhi</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="nav-cta">📞 Book Now</a>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#services" onclick="closeMobile()">Services</a>
+  <a href="#why" onclick="closeMobile()">Why Us</a>
+  <a href="#testimonials" onclick="closeMobile()">Reviews</a>
+  <a href="#faq" onclick="closeMobile()">FAQ</a>
+  <a href="#contact" onclick="closeMobile()">Book Appointment</a>
+</div>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section id="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-orb hero-orb-3"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-badge">✦ Najafgarh's Premium Dental Care</div>
+      <h1 class="hero-title">
+        Your Smile<br>
+        Deserves the<br>
+        <span class="line-color">Best Care.</span>
+      </h1>
+      <p class="hero-sub">
+        Advanced dental treatments for the whole family in Najafgarh, New Delhi. Modern technology, compassionate care, and a commitment to your healthiest smile.
+      </p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">📅 Book Appointment <span>→</span></a>
+        <a href="#services" class="btn-secondary">🦷 Our Services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num" data-count="500">0</span><span class="stat-label">Happy Patients</span></div>
+        <div class="stat"><span class="stat-num" data-count="10">0</span><span class="stat-label">Services</span></div>
+        <div class="stat"><span class="stat-num" data-count="5">0</span><span class="stat-label">Years Experience</span></div>
+        <div class="stat"><span class="stat-num">4.9</span><span class="stat-label">Patient Rating</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card-main">
+        <span class="hero-card-icon">🦷</span>
+        <h3>JD Premium Dental Clinic</h3>
+        <p>Where advanced dentistry meets genuine compassion — serving Najafgarh and New Delhi with world-class care.</p>
+      </div>
+      <div class="hero-float-badge b1">
+        <div class="badge-dot"></div>
+        <span>Now Accepting Patients</span>
+      </div>
+      <div class="hero-float-badge b2">
+        <span>⭐ 4.9 Rating</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-info-bar">
+    <div class="info-item">
+      <span class="info-icon">📍</span>
+      <div><div class="info-label">Location</div><div class="info-val">Jatav Mohalla, Najafgarh</div></div>
+    </div>
+    <div class="info-sep"></div>
+    <div class="info-item">
+      <span class="info-icon">📞</span>
+      <div><div class="info-label">Call Us</div><div class="info-val">087430 46085</div></div>
+    </div>
+    <div class="info-sep"></div>
+    <div class="info-item">
+      <span class="info-icon">🕐</span>
+      <div><div class="info-label">Hours</div><div class="info-val">Open · Closes 3 PM</div></div>
+    </div>
+    <div class="info-sep"></div>
+    <div class="info-item">
+      <span class="info-icon">🏥</span>
+      <div><div class="info-label">Opp.</div><div class="info-val">Primary Health Centre & Metro Parking</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ ABOUT ═══════════════ -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-visual reveal-left">
+        <div class="about-card-wrap">
+          <div class="about-main-img">
+            <span class="about-tooth-icon">🏥</span>
+            <h3>Premium Dental Care</h3>
+            <p>Modern equipment · Strict hygiene · Compassionate team</p>
+          </div>
+          <div class="about-accent-card ac1">
+            <p>Serving</p>
+            <strong>Najafgarh</strong>
+          </div>
+          <div class="about-accent-card ac2">
+            <p>Open Daily</p>
+            <strong>Till 3 PM</strong>
+          </div>
+        </div>
+      </div>
+      <div class="about-text reveal-right">
+        <div class="section-tag">About Us</div>
+        <h2 class="section-title">Who We <span>Are</span></h2>
+        <p>JD Premium Dental Clinic was founded with a powerful vision: to make premium dental care accessible, affordable, and compassionate for every resident of Najafgarh and surrounding areas.</p>
+        <p>Situated at the heart of Jatav Mohalla — conveniently located opposite the Primary Health Centre and Metro Parking Gate — our clinic has become a trusted name in dental healthcare for families across Najafgarh, New Delhi.</p>
+        <p>We understand visiting the dentist can feel intimidating. That is why every member of our team is committed to creating an environment where you feel heard, comfortable, and well cared for.</p>
+        <div class="about-values">
+          <div class="value-item">
+            <span class="value-icon">❤️</span>
+            <div class="value-text"><strong>Patient First</strong><span>Comfort at every step</span></div>
+          </div>
+          <div class="value-item">
+            <span class="value-icon">💎</span>
+            <div class="value-text"><strong>Excellence</strong><span>Latest skills & technology</span></div>
+          </div>
+          <div class="value-item">
+            <span class="value-icon">🔍</span>
+            <div class="value-text"><strong>Transparency</strong><span>Honest, clear treatment plans</span></div>
+          </div>
+          <div class="value-item">
+            <span class="value-icon">🛡️</span>
+            <div class="value-text"><strong>Safety</strong><span>Strict sterilization protocols</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ SERVICES ═══════════════ -->
+<section id="services">
+  <div class="section-inner">
+    <div style="text-align:center;" class="reveal">
+      <div class="section-tag">What We Offer</div>
+      <h2 class="section-title">Our Dental <span>Services</span></h2>
+      <p class="section-sub" style="margin:0 auto;">Comprehensive care for every smile — all under one roof in Najafgarh.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-card-glow"></div>
+        <span class="service-icon">🔬</span>
+        <h3>General & Preventive Dentistry</h3>
+        <p>Routine check-ups, professional cleaning, fillings, X-rays and oral cancer screening to keep your teeth healthy.</p>
+        <div class="service-card-arrow">→</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-card-glow"></div>
+        <span class="service-icon">✨</span>
+        <h3>Cosmetic Dentistry</h3>
+        <p>Teeth whitening, veneers, smile designing and bonding to transform your smile and boost your confidence.</p>
+        <div class="service-card-arrow">→</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-card-glow"></div>
+        <span class="service-icon">😁</span>
+        <h3>Orthodontics / Braces</h3>
+        <p>Metal braces, ceramic braces and aligners to straighten teeth and correct bite issues for all ages.</p>
+        <div class="service-card-arrow">→</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-card-glow"></div>
+        <span class="service-icon">🔩</span>
+        <h3>Dental Implants</h3>
+        <p>Permanent, natural-looking tooth replacement that looks, feels and functions just like real teeth.</p>
+        <div class="service-card-arrow">→</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-card-glow"></div>
+        <span class="service-icon">💊</span>
+        <h3>Root Canal Treatment</h3>
+        <p>Modern, painless endodontic treatment to save severely infected or decayed teeth quickly and comfortably.</p>
+        <div class="service-card-arrow">→</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-card-glow"></div>
+        <span class="service-icon">👑</span>
+        <h3>Crowns & Bridges</h3>
+        <p>High-quality zirconia, ceramic and metal crowns to restore damaged or missing teeth beautifully.</p>
+        <div class="service-card-arrow">→</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-card-glow"></div>
+        <span class="service-icon">👶</span>
+        <h3>Pediatric Dentistry</h3>
+        <p>Gentle, fun and fear-free dental care for children, building healthy habits from an early age.</p>
+        <div class="service-card-arrow">→</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-card-glow"></div>
+        <span class="service-icon">🌿</span>
+        <h3>Gum Treatment (Periodontics)</h3>
+        <p>Deep cleaning, scaling and gum disease treatment to ensure healthy gums as the foundation of oral health.</p>
+        <div class="service-card-arrow">→</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-card-glow"></div>
+        <span class="service-icon">🚨</span>
+        <h3>Emergency Dental Care</h3>
+        <p>Prompt, effective treatment for severe toothache, broken teeth, dental abscess and urgent dental needs.</p>
+        <div class="service-card-arrow">→</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-card-glow"></div>
+        <span class="service-icon">🦷</span>
+        <h3>Tooth Extractions</h3>
+        <p>Safe, comfortable simple and surgical extractions including wisdom tooth removal with minimal discomfort.</p>
+        <div class="service-card-arrow">→</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ WHY US ═══════════════ -->
+<section id="why">
+  <div class="section-inner">
+    <div class="why-grid">
+      <div class="reveal-left">
+        <div class="section-tag">Why Choose Us</div>
+        <h2 class="section-title">Why Patients <span>Trust</span> Us</h2>
+        <p class="section-sub" style="margin-bottom:2.5rem;">We go beyond dentistry — we build lasting relationships rooted in trust, expertise, and genuine care.</p>
+        <div class="why-features">
+          <div class="why-feat">
+            <div class="why-feat-icon">🏥</div>
+            <div class="why-feat-text">
+              <h4>State-of-the-Art Facility</h4>
+              <p>Modern dental equipment with strict sterilization protocols for your safety and comfort.</p>
+            </div>
+          </div>
+          <div class="why-feat">
+            <div class="why-feat-icon">👨‍⚕️</div>
+            <div class="why-feat-text">
+              <h4>Experienced Professionals</h4>
+              <p>Qualified dentists with years of expertise across all branches of dentistry.</p>
+            </div>
+          </div>
+          <div class="why-feat">
+            <div class="why-feat-icon">😌</div>
+            <div class="why-feat-text">
+              <h4>Painless Treatments</h4>
+              <p>Latest techniques and anaesthesia options to minimize discomfort during every procedure.</p>
+            </div>
+          </div>
+          <div class="why-feat">
+            <div class="why-feat-icon">👨‍👩‍👧</div>
+            <div class="why-feat-text">
+              <h4>Family Dentistry for All Ages</h4>
+              <p>Personalized care for everyone from infants to senior citizens under one roof.</p>
+            </div>
+          </div>
+          <div class="why-feat">
+            <div class="why-feat-icon">📍</div>
+            <div class="why-feat-text">
+              <h4>Conveniently Located</h4>
+              <p>Easy to find in Jatav Mohalla, Najafgarh — opposite Primary Health Centre & Metro Parking Gate.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="why-visual reveal-right">
+        <div class="why-big-card">
+          <h3>Our Clinic at a Glance</h3>
+          <div class="why-stats-grid">
+            <div class="why-stat">
+              <span class="why-stat-num" data-count="500">0</span>
+              <span class="why-stat-lbl">Happy Patients</span>
+            </div>
+            <div class="why-stat">
+              <span class="why-stat-num" data-count="10">0</span>
+              <span class="why-stat-lbl">Dental Services</span>
+            </div>
+            <div class="why-stat">
+              <span class="why-stat-num" data-count="5">0</span>
+              <span class="why-stat-lbl">Years Serving</span>
+            </div>
+            <div class="why-stat">
+              <span class="why-stat-num">4.9★</span>
+              <span class="why-stat-lbl">Patient Rating</span>
+            </div>
+          </div>
+          <div style="margin-top:2rem; padding:1.5rem; background:rgba(11,188,212,0.08); border-radius:14px; border:1px solid rgba(11,188,212,0.2);">
+            <p style="font-size:.85rem; color:rgba(255,255,255,0.7); line-height:1.7; margin-bottom:.8rem;">📍 <strong>Visit Us At:</strong></p>
+            <p style="font-size:.8rem; color:rgba(255,255,255,0.55); line-height:1.7;">Plot No. 1467-68, Street No. 1, Opp. Primary Health Centre & Metro Parking Gate, Jatav Mohalla, Najafgarh, New Delhi – 110043</p>
+            <a href="tel:08743046085" style="display:inline-flex; align-items:center; gap:8px; margin-top:1rem; background:var(--grad-btn); color:#fff; padding:10px 20px; border-radius:50px; font-size:.82rem; font-weight:600;">📞 087430 46085</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ TESTIMONIALS ═══════════════ -->
+<section id="testimonials">
+  <div class="section-inner" style="padding-bottom:0;">
+    <div style="text-align:center;" class="reveal">
+      <div class="section-tag">Patient Stories</div>
+      <h2 class="section-title">What Our Patients <span>Say</span></h2>
+    </div>
+  </div>
+  <div class="testimonials-track-wrap" style="padding: 2rem 0 80px;">
+    <div class="testimonials-track" id="testiTrack">
+      <!-- Cards duplicated for seamless loop -->
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Excellent service and very caring staff. I was very nervous about my root canal, but the doctor explained everything clearly and the procedure was completely painless. Highly recommended!"</p><div class="testi-author"><div class="testi-avatar">RS</div><div class="testi-name"><strong>Rahul S.</strong><span>Najafgarh</span></div></div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Best dental clinic in Najafgarh! The clinic is very clean and hygienic. My kids actually enjoy coming here for their check-ups. The dentist is wonderful with children."</p><div class="testi-author"><div class="testi-avatar">PM</div><div class="testi-name"><strong>Priya M.</strong><span>Najafgarh</span></div></div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"My smile has completely transformed. I got teeth whitening and veneers done here and the results are amazing. Professional team, great results, very affordable prices."</p><div class="testi-author"><div class="testi-avatar">AK</div><div class="testi-name"><strong>Amit K.</strong><span>New Delhi</span></div></div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Got my braces done here and the treatment was smooth from start to finish. Very professional and explained every step. The clinic is very well-maintained and hygienic."</p><div class="testi-author"><div class="testi-avatar">SV</div><div class="testi-name"><strong>Sunita V.</strong><span>Najafgarh</span></div></div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"I had a dental emergency and they attended to me very quickly. The doctor was calm, reassuring and fixed my broken tooth the same day. Very grateful for their prompt care!"</p><div class="testi-author"><div class="testi-avatar">MR</div><div class="testi-name"><strong>Manish R.</strong><span>Najafgarh</span></div></div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Affordable prices without compromising quality at all. The staff is friendly and the environment is very welcoming. Definitely the best dental clinic in this area."</p><div class="testi-author"><div class="testi-avatar">DT</div><div class="testi-name"><strong>Deepa T.</strong><span>New Delhi</span></div></div></div>
+      <!-- Duplicate set -->
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Excellent service and very caring staff. I was very nervous about my root canal, but the doctor explained everything clearly and the procedure was completely painless. Highly recommended!"</p><div class="testi-author"><div class="testi-avatar">RS</div><div class="testi-name"><strong>Rahul S.</strong><span>Najafgarh</span></div></div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Best dental clinic in Najafgarh! The clinic is very clean and hygienic. My kids actually enjoy coming here for their check-ups. The dentist is wonderful with children."</p><div class="testi-author"><div class="testi-avatar">PM</div><div class="testi-name"><strong>Priya M.</strong><span>Najafgarh</span></div></div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"My smile has completely transformed. I got teeth whitening and veneers done here and the results are amazing. Professional team, great results, very affordable prices."</p><div class="testi-author"><div class="testi-avatar">AK</div><div class="testi-name"><strong>Amit K.</strong><span>New Delhi</span></div></div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Got my braces done here and the treatment was smooth from start to finish. Very professional and explained every step. The clinic is very well-maintained and hygienic."</p><div class="testi-author"><div class="testi-avatar">SV</div><div class="testi-name"><strong>Sunita V.</strong><span>Najafgarh</span></div></div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"I had a dental emergency and they attended to me very quickly. The doctor was calm, reassuring and fixed my broken tooth the same day. Very grateful for their prompt care!"</p><div class="testi-author"><div class="testi-avatar">MR</div><div class="testi-name"><strong>Manish R.</strong><span>Najafgarh</span></div></div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Affordable prices without compromising quality at all. The staff is friendly and the environment is very welcoming. Definitely the best dental clinic in this area."</p><div class="testi-author"><div class="testi-avatar">DT</div><div class="testi-name"><strong>Deepa T.</strong><span>New Delhi</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FAQ ═══════════════ -->
+<section id="faq">
+  <div class="section-inner">
+    <div style="text-align:center;" class="reveal">
+      <div class="section-tag">FAQ</div>
+      <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+      <p class="section-sub" style="margin:0 auto 1rem;">Everything you need to know before your visit.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">Where is JD Premium Dental Clinic located?<div class="faq-toggle">+</div></div>
+        <div class="faq-a">We are located at Plot No. 1467-68, Street No. 1, Jatav Mohalla, Najafgarh, New Delhi – 110043. We are situated opposite the Primary Health Centre and Metro Parking Gate, making us very easy to find by both public transport and private vehicle.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">What are your clinic hours?<div class="faq-toggle">+</div></div>
+        <div class="faq-a">Our clinic is currently open and closes at 3:00 PM. Please call us at 087430 46085 to confirm current timings or to schedule your appointment.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">How do I book an appointment?<div class="faq-toggle">+</div></div>
+        <div class="faq-a">You can book an appointment by calling us at 087430 46085 or by filling out the appointment form on this page. Walk-in patients are also welcome, subject to availability.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">Do you treat children?<div class="faq-toggle">+</div></div>
+        <div class="faq-a">Yes! We provide gentle, child-friendly dental care for patients of all ages, including infants, children, and teenagers. Our pediatric dental services are designed to make kids feel comfortable and at ease.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">Is root canal treatment painful?<div class="faq-toggle">+</div></div>
+        <div class="faq-a">With modern anaesthesia and techniques, root canal treatment is no more uncomfortable than getting a routine filling. Our dentists ensure you are completely comfortable before and throughout the entire procedure.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">How often should I visit the dentist?<div class="faq-toggle">+</div></div>
+        <div class="faq-a">We recommend visiting the dentist every 6 months for a routine check-up and professional cleaning, even if you have no dental problems. Early detection prevents costly and complex treatments later.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">Do you offer teeth whitening?<div class="faq-toggle">+</div></div>
+        <div class="faq-a">Yes, we offer professional in-clinic teeth whitening treatments that are safe, effective, and deliver noticeably brighter results compared to any over-the-counter products.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">What should I do in a dental emergency?<div class="faq-toggle">+</div></div>
+        <div class="faq-a">If you are experiencing severe tooth pain, a broken tooth, or any other dental emergency, please call us immediately at 087430 46085. We will advise you and arrange to see you as soon as possible.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CONTACT ═══════════════ -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center;">
+      <div class="section-tag">Get In Touch</div>
+      <h2 class="section-title">Book Your <span>Appointment</span></h2>
+      <p class="section-sub" style="margin:0 auto;">We are here to help you smile better. Reach out today.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal-left">
+        <div class="contact-card">
+          <div class="contact-card-icon">📍</div>
+          <div class="contact-card-body">
+            <h4>Our Address</h4>
+            <p>Plot No. 1467-68, Street No. 1, Opp. Primary Health Centre & Metro Parking Gate, Jatav Mohalla, Najafgarh, New Delhi – 110043</p>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">📞</div>
+          <div class="contact-card-body">
+            <h4>Phone</h4>
+            <p><a href="tel:08743046085">087430 46085</a></p>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">🕐</div>
+          <div class="contact-card-body">
+            <h4>Clinic Hours</h4>
+            <p>Open · Closes 3:00 PM<br>Please call to confirm current timings.</p>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">📍</div>
+          <div class="contact-card-body">
+            <h4>Areas Served</h4>
+            <p>Najafgarh and surrounding localities of New Delhi</p>
+          </div>
+        </div>
+        <div style="background:rgba(11,188,212,0.08); border:1px solid rgba(11,188,212,0.2); border-radius:16px; padding:1.5rem; margin-top:.5rem;">
+          <p style="font-size:.8rem; color:rgba(255,255,255,0.6); line-height:1.7; margin-bottom:.8rem;">🗺️ <strong style="color:var(--aqua)">How to Find Us:</strong></p>
+          <p style="font-size:.78rem; color:rgba(255,255,255,0.5); line-height:1.7;">Located directly opposite the Primary Health Centre and the Metro Parking Gate on Street No. 1, Jatav Mohalla, Najafgarh. Easily accessible by road and public transport.</p>
+        </div>
+      </div>
+      <div class="contact-form reveal-right">
+        <h3>📅 Book an Appointment</h3>
+        <div id="formContent">
+          <div class="form-row">
+            <div class="form-group"><label>Full Name *</label><input type="text" placeholder="Your full name" required></div>
+            <div class="form-group"><label>Phone Number *</label><input type="tel" placeholder="Your phone number" required></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Email Address</label><input type="email" placeholder="your@email.com"></div>
+            <div class="form-group"><label>Preferred Date *</label><input type="date" required></div>
+          </div>
+          <div class="form-group">
+            <label>Service Required</label>
+            <select>
+              <option value="">Select a service...</option>
+              <option>General Check-up & Cleaning</option>
+              <option>Teeth Whitening / Cosmetic</option>
+              <option>Braces / Orthodontics</option>
+              <option>Dental Implants</option>
+              <option>Root Canal Treatment</option>
+              <option>Crowns & Bridges</option>
+              <option>Pediatric / Child Dentistry</option>
+              <option>Gum Treatment</option>
+              <option>Tooth Extraction</option>
+              <option>Emergency Dental Care</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Message / Notes</label><textarea placeholder="Any additional information or questions..."></textarea></div>
+          <button class="form-submit" onclick="submitForm()">📅 Book My Appointment</button>
+        </div>
+        <div class="form-success" id="formSuccess">
+          <span>✅</span>
+          <strong>Appointment Request Sent!</strong>
+          <p style="font-size:.85rem; color:rgba(255,255,255,0.6); margin-top:.5rem;">Thank you! We'll call you at 087430 46085 to confirm your appointment shortly.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CTA ═══════════════ -->
+<section id="cta">
+  <div class="cta-inner reveal">
+    <div class="section-tag" style="background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.2); color:rgba(255,255,255,0.8);">Ready to Start?</div>
+    <h2>Ready for a Healthier, <span style="background:linear-gradient(135deg,var(--gold),#F0A500);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Brighter Smile?</span></h2>
+    <p>Book your appointment today and take the first step towards optimal oral health. Call us or fill out the form above — our team will be in touch promptly.</p>
+    <div class="cta-btns">
+      <a href="tel:08743046085" class="btn-gold">📞 Call 087430 46085</a>
+      <a href="#contact" class="btn-secondary">📅 Book Online</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="logo-icon">🦷</div>
+          <div class="logo-text">
+            <span class="logo-name">JD Premium Dental</span>
+            <span class="logo-tag">Najafgarh, New Delhi</span>
+          </div>
+        </div>
+        <p>Providing premium dental care to the families of Najafgarh and New Delhi. Your smile is our passion and your health is our commitment.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="#hero">Home</a>
+          <a href="#about">About Us</a>
+          <a href="#services">Services</a>
+          <a href="#why">Why Choose Us</a>
+          <a href="#testimonials">Patient Reviews</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Book Appointment</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Our Services</h4>
+        <div class="footer-links">
+          <a href="#services">General Dentistry</a>
+          <a href="#services">Cosmetic Dentistry</a>
+          <a href="#services">Dental Implants</a>
+          <a href="#services">Orthodontics / Braces</a>
+          <a href="#services">Root Canal</a>
+          <a href="#services">Pediatric Dentistry</a>
+          <a href="#services">Emergency Care</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact-item">
+          <span>📍</span>
+          <span>Plot No. 1467-68, Street No. 1, Jatav Mohalla, Najafgarh, New Delhi – 110043</span>
+        </div>
+        <div class="footer-contact-item">
+          <span>📞</span>
+          <span><a href="tel:08743046085" style="color:var(--aqua)">087430 46085</a></span>
+        </div>
+        <div class="footer-contact-item">
+          <span>🕐</span>
+          <span>Open · Closes 3:00 PM</span>
+        </div>
+        <div class="footer-contact-item">
+          <span>📍</span>
+          <span>Opp. Primary Health Centre & Metro Parking Gate</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 JD Premium Dental Clinic. All Rights Reserved. | Najafgarh, New Delhi</p>
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <p style="font-size:.72rem;">Designed with ❤️ for better smiles</p>
+        <div class="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ─── LOADER ──────────────────────────────── */
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('loader').classList.add('hidden');
+  }, 1900);
+});
+
+/* ─── CURSOR ──────────────────────────────── */
+const dot  = document.getElementById('cursorDot');
+const ring = document.getElementById('cursorRing');
+let mx=0, my=0, rx=0, ry=0;
+document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; dot.style.left=mx+'px'; dot.style.top=my+'px'; });
+(function animRing(){
+  rx += (mx - rx) * 0.12;
+  ry += (my - ry) * 0.12;
+  ring.style.left = rx + 'px';
+  ring.style.top  = ry + 'px';
+  requestAnimationFrame(animRing);
+})();
+document.querySelectorAll('a,button,.service-card,.why-feat,.faq-q,.contact-card,.testi-card').forEach(el => {
+  el.addEventListener('mouseenter', () => ring.classList.add('hovered'));
+  el.addEventListener('mouseleave', () => ring.classList.remove('hovered'));
+});
+
+/* ─── NAVBAR SCROLL ───────────────────────── */
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+/* ─── HAMBURGER ───────────────────────────── */
+document.getElementById('hamburger').addEventListener('click', () => {
+  document.getElementById('mobileMenu').classList.toggle('open');
+});
+function closeMobile() { document.getElementById('mobileMenu').classList.remove('open'); }
+
+/* ─── PARTICLES ───────────────────────────── */
+const pContainer = document.getElementById('particles');
+for(let i=0;i<20;i++){
+  const p = document.createElement('div');
+  p.className = 'particle';
+  const size = Math.random()*6+2;
+  p.style.cssText = `width:${size}px;height:${size}px;left:${Math.random()*100}%;animation-duration:${Math.random()*15+10}s;animation-delay:-${Math.random()*20}s;`;
+  pContainer.appendChild(p);
+}
+
+/* ─── REVEAL ON SCROLL ────────────────────── */
+const revealEls = document.querySelectorAll('.reveal,.reveal-left,.reveal-right');
+const observer  = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){ e.target.classList.add('visible'); }
+  });
+}, { threshold: 0.12 });
+revealEls.forEach(el => observer.observe(el));
+
+/* ─── COUNT UP ANIMATION ──────────────────── */
+function countUp(el, target, suffix='') {
+  let cur = 0; const step = target / 60;
+  const t = setInterval(() => {
+    cur += step;
+    if(cur >= target){ cur = target; clearInterval(t); }
+    el.textContent = Math.floor(cur) + suffix;
+  }, 25);
+}
+const countObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      e.target.querySelectorAll('[data-count]').forEach(el => {
+        countUp(el, parseInt(el.dataset.count), el.dataset.count >= 100 ? '+' : '+');
+      });
+      countObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.4 });
+document.querySelectorAll('.hero-stats,.why-stats-grid').forEach(s => countObs.observe(s));
+
+/* ─── FAQ TOGGLE ──────────────────────────── */
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if(!wasOpen) item.classList.add('open');
+}
+
+/* ─── FORM SUBMIT ─────────────────────────── */
+function submitForm() {
+  document.getElementById('formContent').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+}
+
+/* ─── ACTIVE NAV LINK ─────────────────────── */
+const sections = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+  let cur = '';
+  sections.forEach(s => {
+    if(window.scrollY >= s.offsetTop - 120) cur = s.id;
+  });
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.style.color = a.getAttribute('href') === `#${cur}` ? 'var(--aqua)' : '';
+  });
+});
+</script>
+</body>
+</html>
